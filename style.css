@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template: 1fr / 400px 1fr;
+}
+
+.sidebar {
+    grid-column: 1 / 1;
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main {
+    grid-column: 2 / 3;
+    background: lightblue;
+    display: flex;
+    flex-direction: column;
+}
+
+.books-info {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
