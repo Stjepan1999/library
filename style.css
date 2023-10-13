@@ -1,3 +1,10 @@
+:root {
+    --sidebar-color: #286FB4;
+    --main-color: #E2F0F9;
+    --header-color: #B0DDE4;
+    --delete-button: #DF4C73;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -10,27 +17,56 @@ body {
 
 .sidebar {
     grid-column: 1 / 1;
-    background: orange;
+    background: var(--sidebar-color);
     display: flex;
     flex-direction: column;
     height: 100vh;
+    align-items: center;
 }
 
 .main {
     grid-column: 2 / 3;
-    background: lightblue;
+    background: var(--main-color);
     display: flex;
     flex-direction: column;
+    gap: 25px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
 }
 
 .books-info {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    color: var(--sidebar-color);
 }
 
 .header {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    color: #FFFFFF;
+    height: 75px;
+    background: var(--sidebar-color);
+    border-radius: 15px;
+}
+
+.delete-all-button {
+    background: var(--delete-button);
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.delete-all-button:hover {
+    background: #D24363;
+    cursor: pointer;
 }
