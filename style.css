@@ -150,7 +150,7 @@ input:focus {
     background: #B2C8E0;
 }
 
-button[type="button"] {
+button[type="submit"] {
     width: 200px;
     height: 30px;
     border-radius: 7px;
@@ -164,7 +164,7 @@ button[type="button"] {
 }
 
 
-button[type="button"]:hover {
+button[type="submit"]:hover {
     background: #B2C8E0;
     cursor: pointer;
 }

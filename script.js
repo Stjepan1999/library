@@ -7,9 +7,23 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary(title, author, pages, read) {
-    let newBook = new Book(title, author, pages, read)
-    library.push(newBook)
+function addBookToLibrary() {
+
+    let title = document.querySelector("[name='book-title']")
+    let author = document.querySelector("[name='book-author']")
+    let pages = document.querySelector("[name='book-pages']")
+    let read = document.querySelector("[name='read-book']")
+
+    if (title.value && author.value && pages.value) {
+        let newBook = new Book(title.value, author.value, pages.value, read.value)
+        library.push(newBook);
+
+        title.value = ""
+        author.value = ""
+        pages.value = ""
+
+        showBooks()
+    }
 }
 
 
@@ -43,32 +57,11 @@ let bookContainer = document.querySelector(".books-container")
 let bookDiv = document.createElement("div")
 bookDiv.classList.add("book-div")
 
-
-let firstBook = new Book("First book", "First author", 699, "true")
-let secondBook = new Book("Second book", "Second author", 699, "true")
-
 let addBookButton = document.getElementById("add-button")
-
-
-addBookButton.addEventListener('click', () => {
-    let title = document.querySelector("[name='book-title']").value
-    let author = document.querySelector("[name='book-author']").value
-    let pages = document.querySelector("[name='book-pages']").value
-    let read = document.querySelector("[name='read-book']").value
-
-    addBookToLibrary(title, author, pages, read)
-    showBooks()
-
-    title.value = ""
-    author.value = ""
-    pages.value = ""
-
-    }
-    )
+addBookButton.addEventListener('click', () => addBookToLibrary())
 
 
 let deleteAllButton = document.querySelector(".delete-all-button")
-
 deleteAllButton.addEventListener("click", () => {
     library = [];
     showBooks();
