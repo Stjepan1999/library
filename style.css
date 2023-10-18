@@ -47,6 +47,15 @@ body {
     color: var(--sidebar-color);
 }
 
+.books-read,
+.books-unread,
+.total-books {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
 .header {
     display: flex;
     gap: 10px;
