@@ -12,15 +12,22 @@ function addBookToLibrary() {
     let title = document.querySelector("[name='book-title']")
     let author = document.querySelector("[name='book-author']")
     let pages = document.querySelector("[name='book-pages']")
-    let read = document.querySelector("[name='read-book']")
+    let status = document.querySelector("[name='book-status']")
+
+    if (status.checked) {
+        status.value = "I read it"
+    } else {
+        status.value = "I haven't read it"
+    }
 
     if (title.value && author.value && pages.value) {
-        let newBook = new Book(title.value, author.value, pages.value, read.value)
+        let newBook = new Book(title.value, author.value, pages.value, status.value)
         library.push(newBook);
 
         title.value = ""
         author.value = ""
         pages.value = ""
+        status.checked = false
 
         showBooks()
     }
