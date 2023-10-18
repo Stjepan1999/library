@@ -43,6 +43,7 @@ function showBooks() {
         let deleteButton = document.createElement("button")
         deleteButton.classList.add("delete-button")
         deleteButton.textContent = "DELETE BOOK"
+        deleteButton.addEventListener('click', () => deleteBook(i))
 
         bookContainer.appendChild(bookDiv)
         bookDiv.appendChild(titleDiv)
@@ -52,6 +53,12 @@ function showBooks() {
         bookDiv.appendChild(deleteButton)
     }
 }
+
+function deleteBook(bookIndex) {
+    library.splice(bookIndex, 1);
+    showBooks()
+} 
+
 
 let bookContainer = document.querySelector(".books-container")
 let bookDiv = document.createElement("div")
