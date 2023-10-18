@@ -13,7 +13,7 @@ body {
     font-family: 'Young Serif', serif;
 }
 
-.container {
+.container { 
     display: grid;
     grid-template: 1fr / 400px 1fr;
 }
@@ -150,7 +150,7 @@ input:focus {
     background: #B2C8E0;
 }
 
-button[type="submit"] {
+button[type="button"] {
     width: 200px;
     height: 30px;
     border-radius: 7px;
@@ -164,7 +164,7 @@ button[type="submit"] {
 }
 
 
-button[type="submit"]:hover {
+button[type="button"]:hover {
     background: #B2C8E0;
     cursor: pointer;
 }
