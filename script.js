@@ -1,4 +1,4 @@
-const library = [];
+let library = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -49,8 +49,6 @@ let secondBook = new Book("Second book", "Second author", 699, "true")
 
 let addBookButton = document.getElementById("add-button")
 
-let bookShowed = null;
-
 
 addBookButton.addEventListener('click', () => {
     let title = document.querySelector("[name='book-title']").value
@@ -61,19 +59,21 @@ addBookButton.addEventListener('click', () => {
     addBookToLibrary(title, author, pages, read)
     showBooks()
 
-    title.value = " "
-    author.value = " "
-    pages.value = " "
+    title.value = ""
+    author.value = ""
+    pages.value = ""
 
     }
     )
 
-let deleteAllButton = document.querySelector("#delete-all-button")
+
+let deleteAllButton = document.querySelector(".delete-all-button")
 
 deleteAllButton.addEventListener("click", () => {
-    library = []
-    showBooks()
+    library = [];
+    showBooks();
 })
+
 
 
 showBooks()
