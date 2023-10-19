@@ -8,8 +8,8 @@ function Book(title, author, pages, status) {
 }
 
 // Creating first book object for testing and pushing it to library array
-let atomicHabits = new Book("Atomic Habits", "James Clear", 243, "yes")
-let cantHurtMe = new Book("Can't hurt me", "David Goggings", 276, "no")
+let atomicHabits = new Book("Atomic Habits", "James Clear", 320, "yes")
+let cantHurtMe = new Book("Influence", "Robert B. Cialdini", 292, "no")
 library.push(atomicHabits)
 library.push(cantHurtMe)
 
