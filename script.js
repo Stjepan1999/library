@@ -60,23 +60,22 @@ function showBooks() {
         pagesDiv.textContent = library[i].pages
 
         // SVG button for status
-        let statusDiv = document.createElement("button")
-        statusDiv.style.background = "var(--sidebar-color)"
-        statusDiv.style.border = "none";
+        let statusButton = document.createElement("button")
+        statusButton.style.background = "var(--sidebar-color)"
+        statusButton.style.border = "none";
         
         let icon = document.createElement("img")
 
         if (library[i].status === "yes") {
             icon.src = "./images/check-mark-icon.svg"
-            icon.style.fill = "#ff0000"
         } else {
             icon.src ="./images/x-symbol.svg"
         }
 
         icon.classList.add("status-button")
-        statusDiv.appendChild(icon)
+        statusButton.appendChild(icon)
 
-        statusDiv.addEventListener('click', () => {
+        statusButton.addEventListener('click', () => {
             if (library[i].status === "yes") {
                 library[i].status = "no";
                 icon.src ="./images/x-symbol.svg"
@@ -85,14 +84,25 @@ function showBooks() {
                 icon.src = "./images/check-mark-icon.svg"
             }
 
+            // Refreshing list to update status
             showBooks()
         })
         
 
         // Delete button for each book
         let deleteButton = document.createElement("button")
-        deleteButton.classList.add("delete-button")
-        deleteButton.textContent = "DELETE BOOK"
+        deleteButton.style.background = "var(--sidebar-color)"
+        deleteButton.style.border = "none";
+
+        let deleteIcon = document.createElement("img")
+        deleteIcon.src = "./images/trash-can.svg"
+        deleteIcon.classList.add("status-button")
+        deleteButton.appendChild(deleteIcon)
+
+        //deleteButton.classList.add("delete-button")
+        //deleteButton.textContent = "DELETE BOOK"
+
+
         deleteButton.addEventListener('click', () => deleteBook(i))
 
         // Creating book divs for each book in list
@@ -100,7 +110,7 @@ function showBooks() {
         bookDiv.appendChild(titleDiv)
         bookDiv.appendChild(authorDiv)
         bookDiv.appendChild(pagesDiv)
-        bookDiv.appendChild(statusDiv)
+        bookDiv.appendChild(statusButton)
         bookDiv.appendChild(deleteButton)
 
         //Count books
