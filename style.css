@@ -204,6 +204,16 @@ button[type="submit"]:hover {
     margin: 15px;
 }
 
+.status-button{
+    width: 30px;
+    height: 30px;
+    background-color: #286FB4;
+}
+
+.status-button:hover {
+    cursor: pointer;
+}
+
 
 
 .delete-button {
