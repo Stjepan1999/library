@@ -180,8 +180,17 @@ button[type="submit"]:hover {
 
 .footer {
     margin-top: auto;
+    margin-bottom: 20px;
+    color: white;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #333;
+}
 
 .books-container {
     display: flex;
@@ -204,16 +213,17 @@ button[type="submit"]:hover {
     margin: 15px;
 }
 
-.status-button{
+.status-button,
+.delete-icon {
     width: 30px;
     height: 30px;
     background-color: #286FB4;
 }
 
-.status-button:hover {
+.status-button:hover,
+.delete-icon:hover {
     cursor: pointer;
 }
-
 
 
 .delete-button {
