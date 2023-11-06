@@ -23,14 +23,14 @@ class Book {
     
         if (title.value && author.value && pages.value) {
             let newBook = new Book(title.value, author.value, pages.value, status.value)
-            library.push(newBook);
+            this.library.push(newBook);
     
             title.value = ""
             author.value = ""
             pages.value = ""
             status.checked = false
     
-            showBooks()
+            this.showBooks()
         }
     }
     
@@ -92,11 +92,7 @@ class Book {
             deleteIcon.classList.add("status-button")
             deleteButton.appendChild(deleteIcon)
     
-            //deleteButton.classList.add("delete-button")
-            //deleteButton.textContent = "DELETE BOOK"
-    
-    
-            deleteButton.addEventListener('click', () => deleteBook(i))
+            deleteButton.addEventListener('click', () => this.deleteBook(i))
     
             // Creating book divs for each book in list
             bookContainer.appendChild(bookDiv)
@@ -133,9 +129,9 @@ class Book {
 
     // Delete each book on button
     static deleteBook(bookIndex) {
-        library.splice(bookIndex, 1);
-        showBooks()
-    } 
+        this.library.splice(bookIndex, 1);
+        this.showBooks()
+    }
 }
 
 
@@ -147,7 +143,7 @@ Book.library.push(atomicHabits)
 Book.library.push(cantHurtMe)
 
 
-// Adding class to books list divs
+// Adding CSS class to books list divs
 let bookContainer = document.querySelector(".books-container")
 let bookDiv = document.createElement("div")
 bookDiv.classList.add("book-div")
@@ -165,13 +161,13 @@ let totalBooksDiv = document.createElement("div")
 
 // Add book button
 let addBookButton = document.getElementById("add-button")
-addBookButton.addEventListener('click', () => addBookToLibrary())
+addBookButton.addEventListener('click', () => Book.addBookToLibrary())
 
 // Delete all button
 let deleteAllButton = document.querySelector(".delete-all-button")
 deleteAllButton.addEventListener("click", () => {
-    library = [];
-    showBooks();
+    Book.library = [];
+    Book.showBooks();
 })
 
 
