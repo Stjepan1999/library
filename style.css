@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+
 :root {
     --sidebar-color: #286FB4;
     --main-color: #E2F0F9;
@@ -5,7 +8,6 @@
     --delete-button: #DF4C73;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
 body {
     margin: 0;
